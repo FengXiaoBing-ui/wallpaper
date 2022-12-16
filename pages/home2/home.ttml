@@ -1,0 +1,106 @@
+<!-- d:\lingfe\xcx\bzhiDome\pages\home\home.ttml -->
+<view class="body body-space">
+    <!-- 轮播图 -->
+    <view class="page-section">
+      <swiper class="index-banner"  indicator-color="rgba(0, 0, 0, .3)" 
+      indicator-active-color="rgba(0, 0, 0, 1)" current="{{0}}" 
+      current-item-id="" previous-margin="" next-margin="" display-multiple-items="{{1}}"  
+      autoplay="{{lbt.autoplay}}" 
+      interval="{{lbt.interval}}" 
+      circular="{{lbt.circular}}" 
+      vertical="{{lbt.vertical}}" 
+      duration="{{lbt.duration}}" 
+      indicator-dots="{{lbt.indicatorDots}}"
+      bindanimationfinish="animationFinish" bindtransition="transition" >
+        <!-- banner广告 -->
+        <block tt:for="{{ lbtList }}" wx:key="unique" wx:for-item="item" >
+          <swiper-item tt:if="{{isAdUnitId == true && index == 0 && adUnitIdBig != null }}" 
+          style="background-image:url({{item.YQZMBZlbt}});
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;" >
+            <ad unit-id="{{adUnitIdBanner}}" ad-intervals="36"></ad>
+          </swiper-item>
+          <swiper-item tt:else bindtap="btnPreview" 
+          id="{{item.YQZMBZlbt}}"  
+          data-name="{{item.YQZMBZlbtName}}"
+          style="background-image:url({{item.YQZMBZlbt}});
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;"></swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+    <!-- 分类 -->
+    <view tt:if="{{cardInfoList.length>1}}" class='header flex-tab flex-wrp' style="padding: 6px;">
+      <block tt:for="{{ cardInfoList }}"  wx:key="unique" wx:for-index="id" wx:for-item="item">
+        <block tt:if="{{id == 0}}"></block>
+        <block tt:else>
+          <navigator url="../list/list?classtype={{item.YQZMBZclass}}&pid={{item.YQZMBZindexTypeID}}&gid={{item.YQZMBZindexGID}}&title={{item.YQZMBZindexTypeName}}" class='flex-item'>
+            <image bindtap="btnTypeImg" src='{{item.YQZMBZindexBgImg}}'/>
+            <view bindtap="btnTypeImg">{{item.YQZMBZindexTypeName}}</view>
+          </navigator>
+        </block>
+      </block>
+    </view>
+
+    <!-- 搜索框 start  -->
+    <view class="cu-bar bg-white search">
+      <view class="search-form round" style="text-align:center;">
+        <text class="cuIcon-search"></text>
+        <input style="font-size: 12px;font-weight: bold;" bindinput="valuechange" type="text" placeholder="{{placeholderSearch}}" confirm-type="search"></input>
+        <button bindtap="search" style="width:10vh;font-size: 12px;" class="cu-btn round bg-blue shadow">搜索</button>
+      </view>
+    </view>
+
+    <!-- 弹出层 -->
+    <view class="mask" catchtouchmove="preventTouchMove" bindtap="preventHide" wx:if="{{showModal}}"></view>
+    <view class="modalDlg" style="top:14vh;height: 64%;" wx:if="{{showModal}}">
+      <!-- 二维码或其他图片 -->
+      <text bindtap="preventHide" style="position:absolute;top:5px;right:5px;z-index:9999999" class="cuIcon-close text-black"></text>
+      <image mode="widthFix" data-path="{{showIngImg}}" bindlongpress="changanSaveFils" show-menu-by-longpress="true" src="{{showIngImg}}" />
+      <view class="text">长按3秒播放广告后保存</view>
+    </view>
+
+    <!-- 图片列表 -->
+    <view class="bg-white padding" style="padding-top: 0px;padding-bottom: 54px;">
+      <view class="grid col-3 grid-square">
+        <block wx:for="{{imgList}}" wx:key="test" >
+          <!-- 信息流大图广告 -->
+          <view tt:if="{{isAdUnitId == true && index == random}}"
+            bindtap="showTip" class="bg-img" 
+            id="{{item.attId}}" 
+            data-index="{{index}}"
+            data-name="{{item.name}}" 
+            data-path="{{item.sattDir}}" style="background-image:url({{item.sattDir}});{{classType == 4?'height:190px;':''}}" >
+            <ad type="large" unit-id="{{adUnitIdBig}}" ad-intervals="30"></ad>
+          </view>
+          <view tt:else bindtap="showTip" class="bg-img" 
+            id="{{item.attId}}" 
+            data-index="{{index}}"
+            data-name="{{item.name}}" 
+            data-path="{{item.sattDir}}" style="background-image:url({{item.sattDir}});{{classType == 4?'height:190px;':''}}"></view>
+        </block>
+      </view>
+      <view style="text-align: center;">-- 加载完毕 --</view>
+    </view>
+</view>
+
+<!-- 导航菜单-start -->
+<view tt:if="{{cardInfoList.length>1}}" class="cu-bar tabbar bg-white shadow foot">
+  <block  tt:for="{{ cardInfoList }}"  tt:key="unique" tt:for-index="id" tt:for-item="item">
+    <navigator tt:if="{{id == 0}}" open-type="redirect" url="../home/home" class="action">
+      <view class='cuIcon-cu-image'>
+        <image tt:else src="{{item.YQZMBZindexBgImg}}"></image>
+      </view>
+      <view class="{{PageCur == -1 ?'text-home':'text-gray'}}">{{item.YQZMBZindexTypeName}}</view>
+    </navigator>
+    <navigator tt:else open-type="redirect"  class="action" url="../list/list?classtype={{item.YQZMBZclass}}&pid={{item.YQZMBZindexTypeID}}&gid={{item.YQZMBZindexGID}}&title={{item.YQZMBZindexTypeName}}" >
+      <view class='cuIcon-cu-image'>
+        <image src="{{item.YQZMBZindexBgImg}}"></image>
+      </view>
+      <view class="text-gray">{{item.YQZMBZindexTypeName}}</view>
+    </navigator>
+  </block>
+</view>

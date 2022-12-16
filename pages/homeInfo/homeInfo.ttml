@@ -1,0 +1,27 @@
+<!-- d:\lingfe\xcx\bzhiDome\pages\homeInfo\homeInfo.ttml -->
+<view class="pages" style="background-image:url({{infoData.sattDir}});    
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;width: 100%;display: block;height: {{windowHeight}}px;">
+</view>
+
+<!-- 弹出层 -->
+<view class="mask" catchtouchmove="preventTouchMove" bindtap="preventHide" wx:if="{{showModal}}"></view>
+<view class="modalDlg" style="top:39%;height: auto;" wx:if="{{showModal}}">
+    <!-- 二维码或其他图片 -->
+    <view class="text" style="color: #0a0808;">下载超清原图【无水印】</view>
+    <view bindtap="preventHide" class="cuIcon-close text-black dom-quxiao"></view>
+    <view class="dom-bg dom-bg-gif2">
+        <image class="dom-bg-img" style="margin: 0px;" bindtap="btnDownload" 
+            mode="widthFix"
+            src="/images/btn/btn1.gif" />
+        <view bindtap="btnDownload" class="dom-bg-btn">点击下载</view>
+    </view>
+    <text class="text" style="color: #0a0808;">看段小广告为创作者助力</text>
+    <!-- <text class="text" style="color: #0a0808;">看段小广告为创作者助力,\n<text style="color: green;">观看3次后免广告下载5次！</text></text> -->
+</view>
+
+<!-- 操作 -->
+<view bindtap="btnReturn" style="position: fixed;left: 30px;top: 60px;border: solid black;border-width: 0 3px 3px 0;display: inline-block;padding: 6px;transform: rotate(135deg);-webkit-transform: rotate(135deg);"></view>
+<view bindtap="showTip" class='btn_3d btn_to' style="bottom:170px;font-size: 30rpx;">下载</view>
+<button class='btn_3d btn_to' style="bottom: 100px;font-size: 30rpx;padding: 0px;" open-type="share">分享</button>

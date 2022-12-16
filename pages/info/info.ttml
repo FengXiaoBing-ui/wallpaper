@@ -1,0 +1,48 @@
+<!-- d:\lingfe\xcx\bzhiDome\pages\info\info.ttml -->
+<view class="page">
+    <!-- 图片 -->
+    <view class="page_img">
+        <view class="page_img_img" style="background-image: url({{infoData.sattDir}});" ></view>
+    </view>
+    
+    <!-- 操作 -->
+    <view class="page_btn">
+        <view class="page_btn_preview">
+            <button bindtap="btnPreview" size="default" type="primary" >返回</button>
+            <!-- <button tt:else bindtap="btnPreview" size="default" type="primary" >预览</button> -->
+        </view>
+        <view class="page_btn_share">
+            <button bindtap="btnShare" size="default" type="primary" 
+            open-type="share" data-channel="" >分享给朋友</button>
+        </view>
+        <view class="page_btn_download">
+            <button bindtap="showTip" size="default" type="primary">下载</button>
+        </view>
+    </view>
+    
+    <!-- 列表 -->
+    <view class="bg-white padding" style="padding-top: 0px;">
+        <view class="grid col-3 grid-square">
+            <view bindtap="checkeImg" class="bg-img" tt:for="{{results}}" wx:key="test" id="{{index}}"
+            style="background-image:url({{item.sattDir}});{{classType == 4?'height:180px;':''}}"></view>
+        </view>
+        <view tt:if="{{results == null|| results.length  == 0}}" style="width: 100%;text-align: center;" >--暂无内容--</view>
+        <view tt:else style="padding: 0px;" class='cu-tabbar-height footer_more'>-- 加载完毕 --</view>
+    </view>
+</view>
+
+<!-- 弹出层 -->
+<view class="mask" catchtouchmove="preventTouchMove" bindtap="preventHide" wx:if="{{showModal}}"></view>
+<view class="modalDlg" style="top:39%;height: auto;" wx:if="{{showModal}}">
+    <!-- 二维码或其他图片 -->
+    <view class="text" style="color: #0a0808;">下载超清原图【无水印】</view>
+    <view bindtap="preventHide" class="cuIcon-close text-black dom-quxiao"></view>
+    <view class="dom-bg">
+        <image class="dom-bg-img" style="margin: 0px;" bindtap="btnDownload" 
+            mode="widthFix"
+            src="/images/btn/btn1.gif" />
+        <view bindtap="btnDownload" class="dom-bg-btn">点击下载</view>
+    </view>
+    <text class="text" style="color: #0a0808;">看段小广告为创作者助力</text>
+    <!-- <text class="text" style="color: #0a0808;">看段小广告为创作者助力,\n<text style="color: green;">观看3次后免广告下载5次！</text></text> -->
+</view>

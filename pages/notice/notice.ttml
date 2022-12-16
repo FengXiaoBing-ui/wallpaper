@@ -1,0 +1,12 @@
+<view class='contanier'>
+  <view class='content'>
+    <view class='avater'>
+      <image src='https://imgsa.baidu.com/forum/w%3D580%3B/sign=951144de6cd0f703e6b295d438c1503d/242dd42a2834349b1c397c4cc7ea15ce36d3be3f.jpg' /></view>
+    <view class='text_content'>
+      <text>我觉得一张好看的图片能使人在看到的一瞬间使人心情愉悦，所以平时看到自己喜欢的图片会随手保存，
+        长年久月也存下了不少个人感觉可以作为壁纸或者头像的图片，奈何手机内存实在太小，
+        所以用云端服务器，做了这款名叫TomCat壁纸的小程序，来和大家分享一些图片并且存放，
+        顺便增加一点自己的编程经验。   
+        ——兴趣使然\n\n目前小程序内图片不多，日后会慢慢更新，图片每周最少更新一次（其实是看时间和心情吧）。ChenZhen</text></view>
+  </view>
+</view>

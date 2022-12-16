@@ -1,0 +1,46 @@
+/* d:\lingfe\xcx\bzhiDome\pages\home\home.ttss */
+
+@import "/app.ttss";
+@import "/pages/list/list.ttss";
+
+.index-banner{
+	width: 100%;
+	height: 150px;
+}
+.swiper-item{
+    width: 100%;
+    height: 150px;
+}
+
+.nav_padding {
+    padding:10rpx;
+  }
+  .nav_item {
+    padding:10rpx 10rpx;
+    border-radius: 20rpx;
+  }
+  .footer_more {
+    text-align: center;
+    padding:20px;
+  }
+  .intro {
+    margin: 30px;
+    text-align: center;
+  }
+  
+  .trans {
+    transition: .2s;
+  }
+
+  .grid.grid-square>view {
+    margin-right: 10rpx;
+    margin-bottom: 10rpx;
+    border-radius: 6rpx;
+    position: relative;
+    overflow: hidden;
+  }
+  .grid.col-3.grid-square>view {
+    padding-bottom: calc((100% - 40rpx)/3);
+    height: 0;
+    width: calc((100% - 20rpx)/3);
+  }

@@ -1,0 +1,59 @@
+/* d:\lingfe\xcx\bzhiDome\pages\info\info.ttss */
+@import "/pages/list/list.ttss";
+
+.page_img{
+    width: 100%;
+    height: auto;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.page_img_img{
+    width: 80%;
+    height: 200px;
+    margin: auto;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.page_btn{
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    padding-bottom: 20px;
+}
+.page_btn_preview{
+    width: calc((100% - 0px)/3);
+    text-align: center;
+    line-height: 0px;
+}
+.page_btn_preview button{
+    width: 40%;
+    font-size: 10px;
+    background-color: mediumorchid;
+    margin-right: 10px;
+}
+.page_btn_share{
+    width: calc((100% - 0px)/3);
+    text-align: center;
+    line-height: 0px;
+}
+.page_btn_share button{
+    width: 100%;
+    font-size: 10px;
+    background-color: mediumorchid;
+    margin-right: 0px;
+}
+.page_btn_download{
+    width: calc((100% - 0px)/3);
+    text-align: center;
+    line-height: 0px;
+}
+.page_btn_download button{
+    width: 40%;
+    font-size: 10px;
+    background-color: mediumorchid;
+    margin-left: 10px;
+}
+

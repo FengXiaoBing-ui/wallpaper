@@ -1,0 +1,83 @@
+<view class="page">
+  <!-- 分类 -->
+  <view tt:if="{{cardInfoList.length > 1 }}" class='header flex-tab flex-wrp'
+    style="height: 30px;line-height: 30px;border: 1px #f7efef solid;">
+    <block  tt:for="{{ cardInfoList }}"  wx:key="unique" wx:for-index="id" wx:for-item="item">
+      <block tt:if="{{ id == 0 && index == 0 }}">
+        <view class='flex-item dianji'>
+          <view bindtap="btnTypeImg" 
+          data-class-type="{{item.YQZMBZclass == undefined?0:item.YQZMBZclass}}"
+          data-title="{{item.YQZMBZindexTypeName}}" 
+          id="{{item.YQZMBZindexTypeID}}">{{item.YQZMBZindexTypeName}}</view>
+        </view>
+      </block>
+      <block tt:else>
+      <view class='flex-item {{ index == item.YQZMBZindexTypeID ? "dianji":""}}'>
+        <view bindtap="btnTypeImg" 
+        data-class-type="{{item.YQZMBZclass == undefined?0:item.YQZMBZclass}}"
+        data-title="{{item.YQZMBZindexTypeName}}" 
+        id="{{item.YQZMBZindexTypeID}}">{{item.YQZMBZindexTypeName}}</view>
+      </view>
+      </block>
+    </block>
+  </view>
+  
+  <!-- 内容 -->
+  <view class="content">
+    <!-- 图片列表 -->
+    <scroll-view 
+    scroll-y class="scrollPage"
+    refresher-enabled="{{true}}"
+    refresher-threshold="{{100}}"
+    refresher-default-style="white"
+    refresher-background="bg-gray"
+    refresher-triggered="{{triggered}}"
+    bindrefresherpulling="onPulling"
+    bindrefresherrefresh="onRefresh"
+    bindrefresherrestore="onRestore"
+    bindrefresherabort="onAbort"
+    lower-threshold="300"
+    bindscrolltolower='lower'>
+      <view class="bg-white padding">
+        <view class="grid col-3 grid-square">
+          <block tt:for="{{results}}" wx:key="test" >
+            <!-- banner广告 -->
+            <view tt:if="{{isAdUnitId == true && index === random}}"
+            bindtap="btnInfo" class="bg-img" 
+            id="{{item.pid}}" 
+            data-name="{{item.name}}" 
+            data-path="{{item.sattDir}}" style="background-image:url({{item.sattDir}});{{classType == 4?'height:190px;':''}}" >
+              <ad unit-id="{{adUnitIdBig}}" ad-intervals="30"></ad>
+            </view>
+            <view tt:else class="bg-img" bindtap="btnInfo" 
+            id="{{item.pid}}" 
+            data-name="{{item.name}}" 
+            data-path="{{item.sattDir}}" 
+            style="background-image:url({{item.sattDir}});{{classType == 4?'height:190px;':''}}"></view>
+          </block>
+        </view>
+        <view tt:if="{{results == null|| results.length  == 0}}" style="width: 100%;text-align: center;" >--暂无内容--</view>
+        <view tt:else class='cu-tabbar-height footer_more'>-- 加载完毕 --</view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+ 
+<!-- 导航菜单-start -->
+<view tt:if="{{cardInfoListTabs.length>1}}" class="cu-bar tabbar bg-white shadow foot">
+  <block  tt:for="{{ cardInfoListTabs }}"  tt:key="unique" tt:for-index="id" tt:for-item="item">
+    <navigator tt:if="{{id == 0}}" open-type="redirect" url="../home/home" class="action">
+      <view class='cuIcon-cu-image'>
+        <image tt:if="{{item.YQZMBZindexBgImg == null}}" src="/images/tabbar/basics{{PageCur == -1 ?'_cur2':'_cur2'}}.png"></image>
+        <image tt:else src="{{item.YQZMBZindexBgImg}}"></image>
+      </view>
+      <view class="{{PageCur == -1 ?'text-home':'text-gray'}}">{{item.YQZMBZindexTypeName}}</view>
+    </navigator>
+    <navigator tt:else open-type="redirect"  class="action" url="../list/list?classtype={{item.YQZMBZclass}}&pid={{item.YQZMBZindexTypeID}}&gid={{item.YQZMBZindexGID}}&title={{item.YQZMBZindexTypeName}}" >
+      <view class='cuIcon-cu-image'>
+        <image src="{{item.YQZMBZindexBgImg}}"></image>
+      </view>
+      <view class="{{id == pid ?'text-home':'text-gray'}}">{{item.YQZMBZindexTypeName}}</view>
+    </navigator>
+  </block>
+</view>

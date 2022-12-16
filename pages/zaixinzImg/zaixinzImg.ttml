@@ -1,0 +1,51 @@
+<!-- c:\Users\13068\Desktop\test\pages\zaixinzImg\zaixinzImg\zaixinzImg.ttml -->
+<view class="page">
+<view class="title">
+    本地图片转外链工具
+</view>
+<view class="img_view">
+<image bindtap="zhuanhuan"
+    src="/images/jia.jpeg"
+    class="img"
+    mode="heightFix"
+>
+</image>
+</view>
+
+
+<textarea
+    class="textarea"
+    value="{{value}}"
+    placeholder="{{placeholder}}"
+    placeholder-style="{{placeholder-style}}"
+    placeholder-class="{{placeholder-class}}"
+    disabled="{{disabled}}"
+    maxlength="{{maxlength}}"
+    focus="{{focus}}"
+    auto-height="{{auto-height}}"
+    cursor-spacing="{{cursor-spacing}}"
+    cursor="{{cursor}}"
+    selection-start="{{selection-start}}"
+    selection-end="{{selection-end}}"
+    adjust-position="{{adjust-position}}"
+    hold-keyboard="{{hold-keyboard}}"
+    disable-default-padding="{{disable-default-padding}}"
+    confirm-type="{{confirm-type}}"
+    confirm-hold="{{confirm-hold}}"
+    show-confirm-bar="{{show-confirm-bar}}"
+    bindinput="bindinput"
+    bindfocus="bindfocus"
+    bindblur="bindblur"
+    bindconfirm="bindconfirm"
+    bindlinechange="bindlinechange"
+>
+</textarea>
+</view>
+
+
+
+
+
+
+
+

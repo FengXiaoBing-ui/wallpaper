@@ -1,0 +1,40 @@
+<view class='g_con'>
+    <view class='topExpress'>
+      <image class="topExpress-left" src='https://static.dingtalk.com/media/lADPGo_k7Zkx5ZDNBIDNA2A_864_1152.jpg'></image>
+      <view class='topExpress-right'>
+        <view class='topExpress-right-top'>更新中..</view>
+        <view class='topExpress-right-middle'>作者：杨磊&零风</view>
+        <view class='topExpress-right-bottom'>合作：{{ 18585094270 }}<text bindtap="onCopyNumber">赞赏</text></view>
+      </view>
+    </view>
+   
+    <!-- 物流时间轴 -->
+    <view class='expressRecord'>
+      <!-- 单个物流记录点时间轴：当前正在进行的物流状态 -->
+      <view class='expressRecord-single-close' wx:for="{{express}}">
+   
+        <!-- 左边子容器 -->
+        <view class='expressRecord-single-noReach-online-top-close'>
+          <!-- 正在进行的时间轴点 -->
+          <view class="dot-father">
+            <view class='dot-closing'></view>
+          </view>
+          <!-- 正在进行的时间轴下半个时间线 -->
+          <view class='online-bottom'></view>
+        </view>
+   
+        <!-- 右边子容器 -->
+        <view class='expressRecord-text'>
+          <view class='expressRecord-statusing'>{{item.version}}->{{item.date}}</view>
+          <view class='expressRecord-status-addressing'>
+            <view class="place">【{{item.place}}】</view>
+            <text class="state">{{item.state}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+<!-- 操作 -->
+<navigator class='btn_3d btn_to up'  url="/pages/notice/notice">公告</navigator>
+<navigator class='btn_3d btn_to del' url="/pages/words/words">留言</navigator>

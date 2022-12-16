@@ -1,0 +1,85 @@
+<!-- d:\lingfe\xcx\bzhiDome\pages\home\home.ttml -->
+<view class="bg-white">
+  <!-- body body-space -->
+  <!-- 轮播图 -->
+  <view class="page-section padding">
+    <swiper class="index-banner" indicator-color="rgba(0, 0, 0, .3)" indicator-active-color="rgba(0, 0, 0, 1)"
+      current="{{0}}" current-item-id="" previous-margin="" next-margin="" display-multiple-items="{{1}}"
+      autoplay="{{lbt.autoplay}}" interval="{{lbt.interval}}" circular="{{lbt.circular}}" vertical="{{lbt.vertical}}"
+      duration="{{lbt.duration}}" indicator-dots="{{lbt.indicatorDots}}" bindanimationfinish="animationFinish"
+      bindtransition="transition">
+      <!-- banner广告 -->
+      <block tt:for="{{ lbtList }}" wx:key="unique" wx:for-item="item">
+        <swiper-item tt:if="{{isAdUnitId == true && index == 0 && adUnitIdBig != null }}" style="background-image:url({{item.YQZMBZlbt}});
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;">
+          <ad unit-id="{{adUnitIdBanner}}" ad-intervals="36"></ad>
+        </swiper-item>
+        <swiper-item tt:else bindtap="btnPreview" id="{{item.YQZMBZlbt}}" data-name="{{item.YQZMBZlbtName}}" style="background-image:url({{item.YQZMBZlbt}});
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;"></swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!-- 创作者 -->
+  <view class="text-xl text-center text-black margin-top">热门创作者</view>
+  <scroll-view class="scroll-view_H" scroll-x="true" scroll-left="{{0}}">
+    <view class="flex align-center">
+      <view bindtap="" style="width:100%;" class="padding-lr flex flex-direction align-center" tt:for="{{ userList }}" tt:key="{{ item.uid }}"
+        tt:for-index="id" tt:for-item="item">
+        <image style="width: 80rpx;min-height:80rpx;max-height:80rpx;border-radius:50%" src="{{ item.avatar }}" mode="aspectFill"></image>
+          <view class="text-center margin-top-xs" style="height: 40rpx;white-space:nowrap">{{ item.realName }}</view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 搜索框 start  -->
+  <view class="cu-bar bg-white search">
+    <view class="search-form round bg-white" style="text-align:center;">
+      <view class="cuIcon-search text-blue" style="font-size: 36rpx;"></view>
+      <input class="text-left" bindinput="valuechange" type="text"
+        placeholder="{{placeholderSearch}}" confirm-type="search"></input>
+      <button bindtap="search" style="width:10vh;font-size: 12px;" class="cu-btn round bg-blue shadow">搜索</button>
+    </view>
+  </view>
+
+  <!-- 图片列表 -->
+  <view class="bg-white padding" style="padding-top: 0px;padding-bottom: 54px;">
+    <view class="grid col-3 grid-square">
+      <block wx:for="{{imgList}}" wx:key="test">
+        <!-- 信息流大图广告 -->
+        <view tt:if="{{isAdUnitId == true && index == random}}" bindtap="showTip" class="bg-img" id="{{item.attId}}"
+          data-index="{{index}}" data-name="{{item.name}}" data-path="{{item.sattDir}}"
+          style="background-image:url({{item.sattDir}});{{classType == 4?'height:190px;':''}}">
+          <ad type="large" unit-id="{{adUnitIdBig}}" ad-intervals="30"></ad>
+        </view>
+        <view tt:else bindtap="showTip" class="bg-img" id="{{item.attId}}" data-index="{{index}}"
+          data-name="{{item.name}}" data-path="{{item.sattDir}}"
+          style="background-image:url({{item.sattDir}});{{classType == 4?'height:190px;':''}}"></view>
+      </block>
+    </view>
+    <view style="text-align: center;">-- 加载完毕 --</view>
+  </view>
+</view>
+
+<!-- 导航菜单-start -->
+<!-- <view class="cu-bar tabbar bg-white shadow foot">
+  <block tt:for="{{ cardInfoList }}" tt:key="unique" tt:for-index="id" tt:for-item="item">
+    <navigator tt:if="{{id == 0}}" open-type="redirect" url="../home/home" class="action">
+      <view class='cuIcon-cu-image'>
+        <image tt:else src="{{item.YQZMBZindexBgImg}}"></image>
+      </view>
+      <view class="{{PageCur == -1 ?'text-home':'text-gray'}}">{{item.YQZMBZindexTypeName}}</view>
+    </navigator>
+    <navigator tt:else open-type="redirect" class="action"
+      url="../list/list?classtype={{item.YQZMBZclass}}&pid={{item.YQZMBZindexTypeID}}&gid={{item.YQZMBZindexGID}}&title={{item.YQZMBZindexTypeName}}">
+      <view class='cuIcon-cu-image'>
+        <image src="{{item.YQZMBZindexBgImg}}"></image>
+      </view>
+      <view class="text-gray">{{item.YQZMBZindexTypeName}}</view>
+    </navigator>
+  </block>
+</view> -->

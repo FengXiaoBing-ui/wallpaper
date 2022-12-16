@@ -1,0 +1,11 @@
+@import "/app.ttss";
+@import "/pages/list/list.ttss";
+
+.wrap{
+    height: 100vh;
+}
+.boxLayout{
+    width: 100%;
+    border-radius: 10rpx;
+    box-shadow: 2rpx 2rpx 10rpx 16rpx rgb(247, 247, 247);
+}

@@ -1,0 +1,150 @@
+
+page {
+    background: #f8f8f8;
+  }
+   
+  .g_con {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+   
+  .topExpress {
+    width: 686rpx;
+    height: 190rpx;
+    background: #fff;
+    margin: 32rpx auto;
+    display: flex;
+    border-radius: 8rpx;
+    padding: 24rpx;
+    box-sizing: border-box;
+  }
+   
+  .topExpress-left {
+    width:140rpx;
+    height:140rpx;
+  }
+   
+  .topExpress-right {
+    width: 454rpx;
+    margin-left: 24rpx;
+    font-size: 32rpx;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+   
+  .topExpress-right-middle,.topExpress-right-bottom {
+    font-size: 24rpx;
+    color: #909090;
+  }
+  
+  .topExpress-right-bottom{
+    width: 454rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items:center
+  }
+  
+  .topExpress-right-bottom text{
+    color: #303030;
+    border: 2rpx #303030 solid;
+    border-radius: 28px;
+    padding: 4rpx 20rpx;
+  }
+  
+  /* 物流时间轴 */
+  
+  .expressRecord {
+    width: 686rpx;
+    padding: 32rpx 32rpx 0rpx 32rpx;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 8rpx;
+    margin: auto;
+  }
+  
+  .expressRecord-single-close {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    color: #909090;
+  }
+  .expressRecord-single-close:first-of-type{
+    color: #303030;
+  }
+  
+  /* 左边子容器 */
+   
+  .expressRecord-single-noReach-online-top-close {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8rpx;
+  }
+  
+   /* 圆点 */
+  .dot-father{
+    width: 16rpx;
+    height: 16rpx;
+    background-color: #fff;
+    border-radius: 50%;
+    position: relative;
+    margin-bottom: 4rpx;
+   }
+  .expressRecord-single-close:first-of-type .dot-father{
+    background-color: #303030;
+  }
+  .expressRecord-single-close:first-of-type .dot-closing{
+    background: #fe4f33;
+  }
+  .dot-closing {
+    width: 8rpx;
+    height: 8rpx;
+    border-radius: 50%;
+    background: #303030;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  
+  /* 下半个时间线 */
+  .online-bottom {
+    flex: 1;
+    width: 4rpx;
+    height: 100%;
+    background: #303030;
+    margin-left:8rpx;
+  }
+  .expressRecord-single-close:last-of-type .online-bottom {
+    background: #fff;
+  }
+   
+  
+  /* 右边子容器 */
+  .expressRecord-statusing {
+    font-size: 24rpx;
+    margin-left: 20rpx;
+  }
+  
+  .expressRecord-status-addressing{
+    padding-bottom: 48rpx;
+    font-size: 28rpx;
+    display: flex;
+  }
+  .place{
+    width: 112rpx;
+  }
+  
+  .state{
+    flex: 1;
+  }
+
+  .del{
+    bottom: 100px;
+  }
+  .up{
+    bottom: 170px;
+  }

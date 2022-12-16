@@ -1,0 +1,20 @@
+  <view class="card_wrap">
+    <view bindtouchend="slidethis" animation="{{id === 0 ? animationData : ''}}" 
+      class="card_item card{{ (id + 1)>=3?3:(id+1) }} " tt:for="{{ cardInfoList }}"  tt:key="unique" tt:for-index="id" tt:for-item="item">
+      <!-- 滑动箭头 -->
+      <span class="change_icon" bindtap="slidethis"  tt:if="{{ id === 0 }}">
+        <image src="https://img2.baidu.com/it/u=3615540704,2089905896&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500"></image>
+      </span>
+
+      <!-- 标题和描述 -->
+      <!-- <view class="card_info" style='background-image:url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.51yuansu.com%2Fpic%2Fcover%2F00%2F05%2F91%2F576ba115af8d4_610.jpg&refer=http%3A%2F%2Fpic.51yuansu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1644722415&t=2c7bc6311c795d679dc93cfb6da6fe9f)'>
+        <blockquote class="card_info_mes_title">{{ item.YQZMBZindexTypeName }}</blockquote>
+        <span class="card_info_mes_item font-light content3" style="margin-top: {{  id === 0 ? 15 : 0 }}px;">{{ item.YQZMBZindexMiaoshu }}</span>
+      </view> -->
+
+      <!-- 按钮和背景图 -->
+      <!-- <navigator class='btn-cta buy_btn' url='../list/list?classtype={{item.YQZMBZclass}}&pid={{item.YQZMBZindexTypeID}}&gid={{item.YQZMBZindexGID}}&title={{item.YQZMBZindexTypeName}}'>点击查看</navigator > -->
+        <view class="btn-cta buy_btn" id="{{item.sattDir}}" bindtap="btnDownload">点击下载</view>
+        <image src="{{item.sattDir}}"></image> 
+    </view>
+  </view>

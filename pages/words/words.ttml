@@ -1,0 +1,11 @@
+<view class='contanier'>
+  <view class='content'>
+    <view class='avater'><image src='https://imgsa.baidu.com/forum/w%3D580%3B/sign=951144de6cd0f703e6b295d438c1503d/242dd42a2834349b1c397c4cc7ea15ce36d3be3f.jpg' /></view>
+    <view class='text_content'>
+      <form bindsubmit="formSubmit" report-submit="true">
+        <textarea bindblur="bindTextAreaBlur" name="words"  placeholder="有什么要和我说的吗" placeholder-style="color:#bebebe;" />
+        <button   formType="submit" type='primary' style='width:50%;margin-top:30rpx;'>提交</button>
+      </form>
+    </view>
+  </view>
+</view>

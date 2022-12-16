@@ -1,0 +1,2 @@
+<!-- d:\lingfe\xcx\bzhiDome\pages\h5\h5.ttml -->
+<web-view src="{{h5url}}" bindmessage="getMessage"></web-view>

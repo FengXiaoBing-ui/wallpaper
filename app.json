@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/homeInfo/homeInfo",
+    "pages/homeInfo2/homeInfo",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/notice/notice",
+    "pages/words/words",
+    "pages/list/list",
+    "pages/info/info",
+    "pages/info2/info",
+    "pages/h5/h5",
+    "pages/zaixinzImg/zaixinzImg",
+    "pages/user/user"
+  ],
+  "window": {
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#3C89FD",
+    "backgroundColor": "#f8f8f8",
+    "enablePullDownRefresh": false,
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#C4C4C4",
+    "selectedColor": "#5E7E88",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "iconPath":"/images/tabbar/basics.png",
+        "selectedIconPath": "/images/tabbar/basics_cur.png",
+        "pagePath": "pages/home/home",
+        "text": "首页"
+      },
+      {
+        "iconPath":"/images/tabbar/component.png",
+        "selectedIconPath": "/images/tabbar/component_cur.png",
+        "pagePath": "pages/index/index",
+        "text": "创作者"
+      },
+      {
+        "iconPath":"/images/tabbar/about.png",
+        "selectedIconPath": "/images/tabbar/about_cur.png",
+        "pagePath": "pages/user/user",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

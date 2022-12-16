@@ -1,0 +1,27 @@
+<view class="wrap padding-lr-sm padding-tb bg-white">
+
+  <!-- 用户 -->
+  <view class="boxLayout padding flex align-center justify-between">
+    <view class="flex align-center">
+      <image tt:if="{{ userInfo.avatarUrl }}" src="{{ userInfo.avatarUrl }}" class="round" style="width: 80rpx;height:80rpx"></image>
+      <view tt:else class="round padding-sm bg-gray flex justify-center align-center" style="width: 80rpx;height:80rpx">
+        <view class="cuIcon-myfill text-white" style="font-size: 42rpx;"></view>
+      </view>
+      <text class="margin-left">{{ userInfo.nickName?userInfo.nickName:'用户名'}}</text>
+    </view>
+    <button tt:if="{{ !userInfo.nickName }}" open-type="getuserinfo" bindtap="login" class="cu-btn line-blue radius">登录</button>
+  </view>
+
+  <!-- 功能列表 -->
+  <view class="margin-top">
+    <view class="boxLayout">
+      <view tt:for="{{ 6 }}" class="padding flex align-center justify-between" style="border: 1px soild #000;">
+        <view class="flex align-center">
+          <image src="/images/xin-0.png" style="width: 40rpx;height:40rpx"></image>
+          <view class="margin-left">收藏</view>
+        </view>
+        <view class="cuIcon-right"></view>
+      </view>
+    </view>
+  </view>
+</view>
