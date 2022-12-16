@@ -4,7 +4,37 @@ Page({
   data: {
     hasLogin: false,
     code: tt.getStorageSync('login.code'),
-    userInfo: {}
+    userInfo: {},
+    labelList:[
+      {
+        label:"创作者",
+        icon:""
+      },
+      {
+        label:"收藏",
+        icon:""
+      },
+      {
+        label:"分享",
+        icon:""
+      },
+      {
+        label:"申请入驻",
+        icon:""
+      },
+      {
+        label:"联系我们",
+        icon:""
+      },
+      {
+        label:"设置",
+        icon:""
+      },
+      {
+        label:"常见问题",
+        icon:""
+      }
+    ]
   },
   onLoad: function () {
     let that = this;

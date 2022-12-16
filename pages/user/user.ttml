@@ -15,10 +15,10 @@
   <!-- 功能列表 -->
   <view class="margin-top">
     <view class="boxLayout">
-      <view tt:for="{{ 6 }}" class="padding flex align-center justify-between" style="border: 1px soild #000;">
+      <view tt:for="{{ labelList }}" tt:for-item="item" tt:for-index="index" class="padding-tb margin-lr flex align-center justify-between" style="{{index>=labelList.length-1?'':'border-bottom: 1rpx solid rgb(240, 240, 240);'}}">
         <view class="flex align-center">
           <image src="/images/xin-0.png" style="width: 40rpx;height:40rpx"></image>
-          <view class="margin-left">收藏</view>
+          <view class="margin-left">{{ item.label }}</view>
         </view>
         <view class="cuIcon-right"></view>
       </view>
