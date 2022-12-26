@@ -1,0 +1,5 @@
+.boxLayout{
+    width: 100%;
+    border-radius: 10rpx;
+    box-shadow: 2rpx 2rpx 10rpx 16rpx rgb(247, 247, 247);
+}

@@ -12,7 +12,8 @@
     "pages/info2/info",
     "pages/h5/h5",
     "pages/zaixinzImg/zaixinzImg",
-    "pages/user/user"
+    "pages/user/user",
+    "pages/creator/creator"
   ],
   "window": {
     "navigationBarTitleText": "",
@@ -36,7 +37,7 @@
       {
         "iconPath":"/images/tabbar/component.png",
         "selectedIconPath": "/images/tabbar/component_cur.png",
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/creator/creator",
         "text": "创作者"
       },
       {

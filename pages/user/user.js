@@ -8,35 +8,36 @@ Page({
     labelList:[
       {
         label:"创作者",
-        icon:""
+        icon:"/images/user/cerator.png"
       },
       {
         label:"收藏",
-        icon:""
+        icon:"/images/user/collection.png"
       },
       {
         label:"分享",
-        icon:""
+        icon:"/images/user/share.png"
       },
       {
         label:"申请入驻",
-        icon:""
+        icon:"/images/user/settleIn.png"
       },
       {
         label:"联系我们",
-        icon:""
+        icon:"/images/user/call.png"
       },
       {
         label:"设置",
-        icon:""
+        icon:"/images/user/setting.png"
       },
       {
         label:"常见问题",
-        icon:""
+        icon:"/images/user/problem.png"
       }
     ]
   },
   onLoad: function () {
+    tt.setNavigationBarTitle({title: app.globalData.config.applicationName});
     let that = this;
     tt.getStorage({
       key: 'userInfo',
@@ -82,10 +83,14 @@ Page({
             tt.request({
               url: app.globalData.domainName + "api/front/creator/index/login",
               method: "POST",
+              header: {
+                "content-type": "multipart/form-data",
+              },
               data: {
                 code:code,
                 request:{
-                  tokenType:2
+                  tokenType:2,
+                  zhijieAppid:'ttee1398ae712d721c01'
                 }
               },
               success: (res) => {

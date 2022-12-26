@@ -1,0 +1,29 @@
+<view class="bg-white">
+    <!-- 轮播图 -->
+    <view class="page-section padding">
+        <swiper class="index-banner" indicator-color="rgba(0, 0, 0, .3)" indicator-active-color="rgba(0, 0, 0, 1)"
+            current="{{0}}" current-item-id="" previous-margin="" next-margin="" display-multiple-items="{{1}}"
+            autoplay="{{lbt.autoplay}}" interval="{{lbt.interval}}" circular="{{lbt.circular}}"
+            vertical="{{lbt.vertical}}" duration="{{lbt.duration}}" indicator-dots="{{lbt.indicatorDots}}"
+            bindanimationfinish="animationFinish" bindtransition="transition">
+            <!-- banner广告 -->
+            <block tt:for="{{ lbtList }}" wx:key="unique" wx:for-item="item">
+                <swiper-item tt:if="{{isAdUnitId == true && index == 0 && adUnitIdBig != null }}" style="background-image:url({{item.YQZMBZlbt}});
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;">
+                    <ad unit-id="{{adUnitIdBanner}}" ad-intervals="36"></ad>
+                </swiper-item>
+                <swiper-item tt:else bindtap="btnPreview" id="{{item.YQZMBZlbt}}" data-name="{{item.YQZMBZlbtName}}"
+                    style="background-image:url({{item.YQZMBZlbt}});
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;"></swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <!-- 创作者列表 -->
+    <view class="boxLayout">
+
+    </view>
+</view>
